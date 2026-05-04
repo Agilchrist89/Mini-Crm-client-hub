@@ -1,12 +1,20 @@
 <div class="container">
   <div class="map-column">
-    <h1>World Map</h1>
     <object type="image/svg+xml" data="assets/world.svg"></object>
   </div>
 
   <div class="info-column">
-    <h2>Country Information</h2>
+    <h2>Country Info</h2>
 
-    <p>Click a country on the map to view information.</p>
+    <p *ngIf="message">{{ message }}</p>
+
+    <div *ngIf="country">
+      <p><strong>Name:</strong> {{ country.name }}</p>
+      <p><strong>Capital:</strong> {{ country.capitalCity }}</p>
+      <p><strong>Region:</strong> {{ country.region.value }}</p>
+      <p><strong>Income:</strong> {{ country.incomeLevel.value }}</p>
+      <p><strong>Latitude:</strong> {{ country.latitude }}</p>
+      <p><strong>Longitude:</strong> {{ country.longitude }}</p>
+    </div>
   </div>
 </div>
